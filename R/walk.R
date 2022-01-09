@@ -1,4 +1,5 @@
-# similate a simple symmetric random walk
+# walk.R similates a simple symmetric random walk over N steps
+# Feel free to change the value of N!
 
 N = 50
 t <- numeric()
