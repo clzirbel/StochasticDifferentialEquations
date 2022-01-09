@@ -1,0 +1,243 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="GENERATOR" content="Mozilla/4.51C-SGI [en] (X11; I; IRIX 6.5 IP22) [Netscape]">
+   <title>Matlab programs for SDE</title>
+</head>
+<body text="#000000" bgcolor="#FFFFFF" link="#0000EE" vlink="#C700FF" alink="#FF0000">
+
+<h2>
+Matlab program files for Stochastic Differential Equations</h2>
+
+<ul>
+<h4>
+General</h4>
+
+<ul>
+<a href="../../programming/matlab_intro.pdf">Matlab
+introduction</a> contains step by step directions to get started with
+Matlab.
+<br>
+<a href="all.zip">all.zip</a> contains all Matlab program files listed here.
+</ul>
+</ul>
+<blockquote>
+	<blockquote>
+		<p><a href="randomwalks.zip">randomwalks.zip</a> contains versions of some programs converted to work with SciLab.
+The conversion was done by Nate Iverson.  
+You can download SciLab for free at <a href="http://www.scilab.org">www.scilab.org</a>.
+Click on downloads, and for Windows, on the installer for binary version.
+</p>
+	</blockquote>
+</blockquote>
+<ul>
+<h4>
+Random walks</h4>
+
+<ul><a href="walk.m">walk(N);</a> displays outcomes of the N-step random walk.
+<a href="walk.pdf">Output</a>
+<br><a href="walkcount.m">walkcount</a> counts the number of N-step
+paths which have a given property.
+<br><a href="scaledwalk.m">scaledwalk(N);</a> scales an N-step random
+walk into time [0,1].
+<a href="scaledwalk.pdf">Output</a>
+<br><a href="scaledwalks.m">scaledwalks</a> shows rescaled walks
+with 50, 100, 200, 1000, 5000, and 25000 steps.
+The same path is used in every plot.
+<a href="scaledwalks.pdf">Output</a>
+<br><a href="scaled_general_walks.m">scaled_general_walks</a> shows
+rescaled walks of various types with 50, 100, 200, 1000, 5000, and 25000
+steps.
+The step sizes can be +n/-1 with probabilities chosen to make the mean step
+be zero.
+The same path is used in every plot.
+<a href="scaled_general_walks1.pdf">Output</a> with -1 / 10 valued steps.
+<a href="scaled_general_walks2.pdf">Output</a> with normally distributed
+steps.
+<br><a href="scaled2dwalk.m">scaled2dwalk(N);</a> scales two N-step
+random walks into time [0,1] and plots them as a two-dimensional trajectory.
+<a href="scaled2dwalk.pdf">Output</a>
+<br><a href="scaled3dwalk.m">scaled3dwalk(N);</a> scales three N-step
+random walks into time [0,1] and plots them as a three-dimensional trajectory.
+<a href="scaled3dwalk.pdf">Output</a>
+</ul>
+
+<h4>
+Brownian motion</h4>
+
+<ul>
+<a href="wiener.m">wiener(N);</a> simulates a one-dimensional
+Wiener process using N normally distributed steps.
+<a href="wiener.pdf">Output</a>
+<br>
+<a href="brownian.m">brownian(N,b,sigma,T);</a> simulates a Brownian motion
+with drift b and diffision coefficient sigma using N normally distributed
+steps.
+<a href="brownian.pdf">Output</a>
+<br>
+<a href="geometric_brownian.m"geometric_>geometric_brownian(N,r,alpha,T);</a>
+simulates a geometric Brownian motion on [0,T] using N normally distributed
+steps and parameters r and alpha.
+<a href="geometric_brownian.pdf">Output</a>
+<br>
+<a href="many_geometric_brownian.m"geometric_>many_geometric_brownian</a>
+simulates six geometric Brownian motions on [0,2] using 10,000 steps, r=2,
+and various values of alpha, all with the same Wiener process outcome, to
+see the effect of changes in alpha.
+<a href="many_geometric_brownian1.pdf">Output 1</a>
+<a href="many_geometric_brownian2.pdf">Output 2</a>
+<br>
+<br><a href="brownian_2d.m">brownian_2d.m</a> simulates a two-dimensional
+Brownian motion.
+<a href="brownian_2d.html">Output</a>
+<br><a href="many_brownian_2d.m">many_brownian_2d.m</a> generates
+multiple two-dimensional Brownian paths.
+<a href="many_brownian_2d.html">Output</a>
+<br><a href="brownian_2d_animate.m">brownian_2d_animate.m</a> shows
+an animation of two-dimensional Brownian motion.</ul>
+
+<h4>
+Ordinary differential equations</h4>
+
+<ul>
+<a href="ode.m">ode.m</a> shows solutions and flow field for
+y' = -y (exponential decay) and for y' = y - y<sup>2</sup> (logistic model).
+<a href="ode.html">Output</a>
+<br><a href="ode_animate.m">ode_animate.m</a> animates several solutions
+to the exponential decay equation.
+<br><a href="ode_euler.m">ode_euler.m</a> uses the Euler method to
+solve an ODE numerically
+<a href="ode_euler.html">Output</a></ul>
+
+<h4>
+Stochastic differential equations</h4>
+
+<ul>
+<a href="ode_euler_noise.m">ode_euler_noise.m</a> compares solutions of the
+exponential decay equation with noise sigma for 5, 10, 100, 1000, 10000
+steps.
+The equation is dx(t)=-x(t)dt+sigma*dW(t) (Langevin equation).
+<a href="ode_euler_noise1.pdf">Output</a> with sigma = 0.
+<a href="ode_euler_noise2.pdf">Output</a> with sigma = 0.2.
+<a href="ode_euler_noise3.pdf">Output</a> with sigma = 0.4.
+<br>
+<a href="langevin.m">langevin.m</a> shows outcomes of exponential
+decay with noise dx(t)=-x(t)dt+sigma*dB(t) (Langevin equation).
+<a href="langevin.html">Output</a>
+<br>
+<a href="add_noise.m">add_noise.m</a> shows the effect of adding
+noise to exponential decay in different ways.
+<a href="add_noise.html">Output</a>
+<br>
+<a href="ehrenfest.m">ehrenfest.m</a> simulates the number of white balls
+in an Ehrenfest urn scheme.
+<br>
+<a href="sde_sine.m">sde_sine.m</a> generates outcomes of solutions
+of the SDE dx(t)=sin(x(t))+sigma*dB(t).
+<a href="sde_sine.html">Output</a></ul>
+
+<h4>
+Kolmogorov's equations</h4>
+
+<ul><a href="kolm_backward.m">kolm_backward.m</a> solves Kolmogorov's
+backward equation, which finds the expected value of a given function as
+a function of time and starting location.
+<br><a href="kolm_forward.m">kolm_forward.m</a> solves Kolmogorov's
+forward equation, which finds the density of the solution of a stochastic
+differential equation.
+<br><a href="make_A1.m">make_A1.m</a> <a href="make_A2.m">make_A2.m</a><a href="make_A3.m">make_A3.m</a>
+are needed for the previous two programs.
+<p><a href="wiener_forward.m">wiener_forward.m</a> sets up Kolmogorov's
+forward equation for the Wiener process.
+<br><a href="langevin_forward.m">langevin_forward.m</a> sets
+up Kolmogorov's forward equation for Langevin's equation dX(t) = -X(t)dt
++ sigma * dB(t) with X(0)=0.
+<br><a href="sine_forward.m">sine_forward.m</a> sets up Kolmogorov's
+forward equation for the SDE dX(t) = sin(X(t))dt + sigma * dB(t) with X(0)=0.
+<p><a href="wiener_backward.m">wiener_backward.m</a> sets up Kolmogorov's
+backward equation for the Wiener process.
+<br><a href="sine_backward.m">sine_backward.m</a> sets up Kolmogorov's
+backward equation for the SDE dX(t) = sin(X(t))dt + sigma * dB(t) with
+X(0)=0.
+<br></ul>
+
+<h4>
+Mathematical finance and option pricing</h4>
+
+<ul><a href="market.m">market.m</a> generates realizations of bond
+and stock prices and plots the density of the stock distribution over time.
+<a href="market.pdf">Output</a>
+<br><a href="utility.m">utility.m</a> shows the expected utility that
+results from holding a constant fraction of your wealth in a stock, as
+described in Section 24.  Then you can decide what fraction you want to put
+in the stock.
+<a href="utility.pdf">Output</a>
+<br><a href="two_gambles.m">two_gambles.m</a> displays the distribution
+of gain/loss under two gambles, the first being buying and holding a stock,
+the second being buying an option to purchase the stock at a particular
+price.
+<a href="two_gambles.pdf">Output</a>
+<br>
+<a href="wealth.m">wealth(p,t,c,r,sigma)</a> returns the wealth
+of a portfolio being managed to match the value of an option with strike
+price c when the current stock price is p and the time remaining is t.
+The stock volatility is sigma and the risk-free interest rate is r.
+<br>
+<a href="num_shares.m">num_shares(p,t,c,r,sigma)</a> returns
+the number of shares of stock held in the portfolio described above.
+<br>
+<a href="option_price.m">option_price.m</a> displays the price
+of an option as a function of the strike price and remaining time until
+expiration.
+<a href="option_price.pdf">Output</a>
+<br>
+<a href="black_scholes.m">black_scholes.m</a> simulates the wealth of the
+Black-Scholes portfolio and plots it in 3d on the surface of the graph of
+u.
+<a href="black_scholes.pdf">Output</a>
+<br>
+<a href="portfolio.m">portfolio.m</a> generates bond and stock
+prices and uses the Black-Scholes portfolio that is equivalent to holding
+an option to buy the stock.
+<a href="portfolio.html">Output</a>
+<br>
+<a href="portfolio2.m">portfolio2.m</a> generates bond and stock
+prices and simulates the Black-Scholes portfolio that is equivalent to
+holding an option to buy the stock</ul>
+
+<h4>
+Predator-prey models</h4>
+
+<ul>
+<a href="pp1_euler.m">pp1_euler.m</a> uses the Euler scheme to numerically
+solve a predator-prey model (called model #1).  The model stabilizes to
+(20,1000).
+<br>
+<a href="pp1_noise.m">pp1_noise.m</a> uses the Euler scheme to numerically
+simulate model #1 with noise.
+<br>
+<a href="pp2_euler.m">pp2_euler.m</a> uses the Euler scheme to numerically
+solve a predator-prey model (called model #2).  The model cycles around
+(20,1000), slowly spinning outward, an artefact of the Euler method.
+<br>
+<a href="pp2_animate.m">pp2_animate.m</a> animates predator and
+prey population sizes in predator-prey model #2.
+<br>
+<a href="pp2_flow_field.m">pp2_flow_field.m</a> shows the two-dimensional
+flow field for a simple predator-prey model.
+<a href="pp_flow_field.html">Output</a>
+<br>
+<a href="pp_simple_animate.m">pp_simple_animate.m</a> animates
+a simple predator-prey model with noise.
+<br>
+<a href="pp_logistic_animate.m">pp_logistic_animate.m</a> animates
+a logistic predator-prey model with noise.
+<br>
+<a href="pp_logistic_noise.m">pp_logistic_noise.m</a> shows the
+effect of noise on a logistic predator-prey model.
+<a href="pp_logistic_noise.html">Output</a></ul>
+</ul>
+
+</body>
+</html>

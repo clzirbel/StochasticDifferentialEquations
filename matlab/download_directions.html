@@ -1,0 +1,95 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="GENERATOR" content="Mozilla/4.76 [en] (X11; U; SunOS 5.8 sun4u) [Netscape]">
+</head>
+<body text="#000000" bgcolor="#FFFFFF" link="#0000EE" vlink="#551A8B" alink="#FF0000">
+
+<h1>
+Downloading and running all Matlab programs</h1>
+The file to be downloaded and expanded is <b>all.tar</b>, a file produced
+by the UNIX program <b>tar</b>, which conglomerates many files into one.&nbsp;
+Slightly different procedures need to be followed depending on what computer
+you're using.
+<br>&nbsp;
+<h3>
+On a Macintosh in the Scientific Computing Lab:</h3>
+
+<ol>
+<li>
+Launch Internet Explorer and open www-math.bgsu.edu/~zirbel/sde</li>
+
+<li>
+Click the link for all.tar.</li>
+
+<li>
+Internet Explorer's Download Manager will appear and the file all.tar
+will be stored in some strange folder somewhere.</li>
+
+<li>
+In Download Manager, double click all.tar, then click on the button
+Reveal in Finder.&nbsp; Now you can see where all.tar was put.</li>
+
+<li>
+Stuffit Expander should have already untarred the file all.tar and
+put the various files it contains into a folder called something like <b>all
+Folder</b>.</li>
+
+<li>
+Drag this folder onto the desktop.&nbsp; If you look at the contents, you
+will see a bunch of .m files, which the Macintosh incorrectly assumes are
+Mathematica files.</li>
+
+<li>
+Start Matlab by pulling down the Apple menu, Applications, Matlab 5.2.</li>
+
+<li>
+In Matlab, File, Open, Desktop, all Folder, and select something like
+show.m.</li>
+
+<li>
+Once you have opened one program from this folder, you can run any program
+from this folder by typing its name in the Matlab command window.</li>
+</ol>
+
+<h3>
+On a UNIX machine such as gauss, euler, or bgunix:</h3>
+
+<ol>
+<li>
+Make sure you have a directory to put the files in.&nbsp; I suggest using
+"mkdir sde" .&nbsp; Then change to that directory with "cd sde".</li>
+
+<li>
+Launch Netscape by typing "netscape &amp;" at the command line.&nbsp; The
+&amp; will cause it to run in the background, allowing you to type further
+commands.</li>
+
+<li>
+Open www-math.bgsu.edu/~zirbel/sde</li>
+
+<li>
+Click the link for all.tar.</li>
+
+<li>
+Netscape will ask you where you want to save this file.&nbsp; Specify the
+directory you created above, and use the name all.tar</li>
+
+<li>
+In the UNIX command window, untar the file with the command "tar -xvf all.tar".</li>
+
+<li>
+Launch an editor so you can make changes to the files.&nbsp; I suggest
+"jot" or "emacs"</li>
+
+<li>
+Now launch Matlab by typing "matlab".</li>
+
+<li>
+You can run programs by typing their name at the command window.&nbsp;
+Try "walk"</li>
+</ol>
+
+</body>
+</html>
