@@ -1,4 +1,4 @@
-# calculate the sum of 1+2+...+300
+# similate a simple symmetric random walk
 
 N = 50
 t <- numeric()
