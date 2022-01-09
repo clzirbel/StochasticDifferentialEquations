@@ -4,6 +4,7 @@ Files:
 *  walk.m
 *  ode_euler.m
 *  ode_euler_noise.m
+*  wiener.m
 
 
 Unprocessed files:
@@ -64,6 +65,5 @@ Unprocessed files:
 *  vrando.m
 *  walkcount.m
 *  wealth.m
-*  wiener.m
 *  wiener_backward.m
 *  wiener_forward.m
