@@ -1,4 +1,4 @@
-# walk.R similates a simple symmetric random walk over N steps
+# walk.R simulates a simple symmetric random walk over N steps
 # Feel free to change the value of N!
 
 N = 50
