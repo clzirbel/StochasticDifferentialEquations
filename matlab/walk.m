@@ -3,8 +3,8 @@
 % Type walk(50); to suppress the listing of positions
 function [S] = walk(N)              % N is the output, S is the output
 
-if nargin < 1
-    N = 50;
+if nargin < 1                       % If no arguments were given,
+    N = 50;                         % Plot a 50-step walk
 end
 
 t = zeros(1,N+1);                   % row vector to store times
