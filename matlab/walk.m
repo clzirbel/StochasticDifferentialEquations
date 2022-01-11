@@ -1,15 +1,30 @@
 % walk(N) displays outcomes of the N-step random walk
 % Run it by typing walk(10) or walk(50) at the command line
+% Type walk(50); to suppress the listing of positions
+function [S] = walk(N)              % N is the output, S is the output
 
-function [S] = walk(N)
+if nargin < 1
+    N = 50;
+end
 
+t = zeros(1,N+1);                   % row vector to store times
+S = zeros(1,N+1);                   % row vector to store positions
+
+for n = 1:N
+    t(n+1) = t(n) + 1;              % increment time by 1
+    S(n+1) = S(n) + 2*(rand>0.5)-1; % position goes up or down by 1
+end
+
+M = max(abs(S))+1;                  % maximum distance from 0
+
+figure(1)
 clf;                                % clear the entire figure
 
-t = (0:1:N)';                       % t is the column vector [0 1 2 3 ... N]
+if N <= 50
+    plot(t,S,'b.');                 % plot the path with blue dots
+    hold on
+end
 
-S = [0; cumsum(2*(rand(N,1)>0.5)-1)];  % S is the running sum of +/-1 variables
-
-M = max(abs(S))+1;
-plot(t,S);          % plot the path
-axis([0 N -M M])
-title([int2str(N) '-step random walk'])
+plot(t,S,'b');                      % plot the path with blue lines
+axis([0 N -M M])                    % set the axis limits
+title([int2str(N) '-step random walk']) % graph title
