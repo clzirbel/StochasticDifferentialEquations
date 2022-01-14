@@ -15,7 +15,7 @@ for n = 1:N
     S(n+1) = S(n) + 2*(rand>0.5)-1; % position goes up or down by 1
 end
 
-M = max(abs(S))+1;                  % maximum distance from 0
+M = max(abs(S))+1;                  % maximum distance from 0, plus 1
 
 figure(1)
 clf;                                % clear the entire figure
