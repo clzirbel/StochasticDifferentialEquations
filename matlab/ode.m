@@ -1,25 +1,24 @@
 % ode.m shows solutions and flow field for y' = -y (exponential decay) 
 % and for y' = y - y^2 (logistic model)
 
+figure(1)
 clf                       % clear the current figure
 
 % Exponential decay example
 
 subplot(2,2,1);           % plot 2 of a 2 by 3 array of plots
 t=[0:0.1:4];              % vector of time points
-y=exp(-t);                % vector of positions
 axis([0 4 -5 4]);
-plot(t,y), hold on        % plot this trajectory, stay on this plot
-y=2*exp(-t);
-plot(t,y), hold on
-y=4*exp(-t);
-plot(t,y), hold on
-y=-3*exp(-t);
-plot(t,y), hold on
-y=-5*exp(-t);
-plot(t,y), hold on
+
+initial_values = [1 2 4 -3 -5 0];
+
+for a = initial_values
+    y=a*exp(-t);
+    plot(t,y)
+    hold on
+end
 grid on
-title('Trajectories');
+title('Exponential decay');
 xlabel('time');
 
 subplot(2,2,2);
@@ -34,28 +33,23 @@ xlabel('time');
 
 subplot(2,2,3);
 t=[0:0.1:6];
-a=0.1;
+
+initial_values = [0.1 0.5 1.1 1.8 0];
+
+for a = initial_values
+    y=a*exp(t)./(1-a+a*exp(t));            % solution is more complicated here
+    plot(t,y)
+    hold on
+end
+
+% special treatment because solutions fail for starting point < 0
+a = -0.1;
 y=a*exp(t)./(1-a+a*exp(t));            % solution is more complicated here
-plot(t,y),hold on
-a=0.5;
-y=a*exp(t)./(1-a+a*exp(t));
-plot(t,y), hold on
-a=1.1;
-y=a*exp(t)./(1-a+a*exp(t));
-plot(t,y), hold on
-a=1.8;
-y=a*exp(t)./(1-a+a*exp(t));
-plot(t,y), hold on
-a=0;
-y=a*exp(t)./(1-a+a*exp(t));
-plot(t,y), hold on
-t=[0:0.05:1.3];
-a=-0.1;
-y=a*exp(t)./(1-a+a*exp(t));
-plot(t,y),hold on
+plot(t(y<0),y(y < 0))
+
 axis([0 6 -0.5 2]);
 grid on
-title('Trajectories');
+title('Logistic growth or decay');
 xlabel('time');
 
 subplot(2,2,4);
