@@ -10,9 +10,9 @@ subplot(2,2,1);           % plot 2 of a 2 by 3 array of plots
 t=[0:0.1:4];              % vector of time points
 axis([0 4 -5 4]);
 
-initial_values = [1 2 4 -3 -5 0];
+initial_states = [1 2 4 -3 -5 0];
 
-for a = initial_values
+for a = initial_states
     y=a*exp(-t);
     plot(t,y)
     hold on
@@ -34,9 +34,9 @@ xlabel('time');
 subplot(2,2,3);
 t=[0:0.1:6];
 
-initial_values = [0.1 0.5 1.1 1.8 0];
+initial_states = [0.1 0.5 1.1 1.8 0];
 
-for a = initial_values
+for a = initial_states
     y=a*exp(t)./(1-a+a*exp(t));            % solution is more complicated here
     plot(t,y)
     hold on
