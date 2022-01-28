@@ -12,7 +12,7 @@ S = zeros(1,N+1);                   % row vector to store positions
 
 for n = 1:N
     t(n+1) = t(n) + 1;              % increment time by 1
-    S(n+1) = S(n) + 2*(rand>0.5)-1; % position goes up or down by 1
+    S(n+1) = S(n) + sign(randn);    % up/down with probability 1/2
 end
 
 M = max(abs(S))+1;                  % maximum distance from 0, plus 1

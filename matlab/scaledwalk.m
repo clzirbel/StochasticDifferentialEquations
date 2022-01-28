@@ -1,17 +1,17 @@
-% scaledwalk(N) displays outcomes of the N-step random walk
-% scaledwalk(N); will not list the values of S
+% scaledwalk(N) displays outcomes of the rescaled N-step random walk
+% scaledwalk(N); will not list the values of W
 
-function [S] = walk(N)              % return the path S as a vector
+function [W] = scaledwalk(N)             % return the path W as a vector
 
-clf;                                % clear the entire figure
+figure(1)
+clf;                                     % clear the entire figure
 
-t = (0:1:N)';                       % t is the column vector [0 1 2 3 ... N]
-
-S = [0; cumsum(2*(rand(N,1)>0.5)-1)];  % S is the running sum of +/-1 variables
-
-plot(t/N,S/sqrt(N));                % plot the path
-axis([0 1 -2 2]);
+t = zeros(1,N+1);                        % vector of time points
+W = zeros(1,N+1);                        % vector of values of locations
+for i = 1:N                              % loop through N values of i
+  t(i+1) = t(i) + 1/N;                   % move to the next time point
+  W(i+1) = W(i) + sign(randn) / sqrt(N); % go up or down by 1/sqrt(N)
+end
+plot(t,W);                               % plot the steps connected by lines
+axis([0 1 -2 2]);                        % use standard axis limits
 title(['Scaled ' int2str(N) '-step random walk'])
-
-S = S/sqrt(N);
-
