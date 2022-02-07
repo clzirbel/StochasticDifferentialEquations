@@ -1,26 +1,26 @@
 % ode_euler.m uses the Euler method to solve an ODE numerically
 
 T = 7;                     % maximum time to go to
-h = 0.01;                  % time step
-N = ceil(T/h);             % number of steps to take
+N = T*100;                 % number of steps to take
+h = 1/N;                   % size of time step
 
-t = zeros(N,1);            % prepare a place to store times
-z = zeros(N,1);            % prepare a place to store locations
+t = zeros(1,N+1);          % prepare a place to store times
+z = zeros(1,N+1);          % prepare a place to store locations
 
 initial_states = [1 2 4 -3 -5 0];
 
 figure(1)
 clf
-plot(t,0*t,'r:')                    % red dotted line at height 0
+plot(t,0*t,'r:')           % red dotted line at height 0
 hold on
 
 for yo = initial_states
 
-    t(1) = 0;                  % initial time
-    z(1) = yo;                 % initial location
-    for i=1:N                  % take N steps
-      t(i+1) = t(i) + h;
-      z(i+1) = z(i) + (-z(i))*h;  % the function f is f(z) = -z
+    t(1) = 0;                     % initial time
+    z(1) = yo;                    % initial location
+    for i=1:N                     % take N steps
+      t(i+1) = t(i) + h;          % move to the next time point
+      z(i+1) = z(i) + (-z(i))*h;  % follow function f(z) = -z
     end;
 
     plot(t,z,'b');
