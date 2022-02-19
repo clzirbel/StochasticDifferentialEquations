@@ -9,7 +9,7 @@ clf
 sigma = 1;                   % strength of the noise
 
 T = 7;                       % maximum time to go to
-M = [5 10 100 1000 10000];   % illustrate different numbers of steps
+M = [5 10 100 1000 10000]*T;   % illustrate different numbers of steps
 
 for v = 1:length(M)
   N = M(v);                  % set the number of steps for this realization
